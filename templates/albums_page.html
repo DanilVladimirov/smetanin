@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/static/css/feedback_page.css">
+    <link rel="stylesheet" href="/static/css/start_page.css">
+    <link rel="stylesheet" href="/static/css/albums_page.css">
+{% endblock %}
+
+{% block body %}
+    <div class="title">Альбоми</div>
+    <div class="albums">
+        {% for album in albums %}
+            <div class="album" onclick="location.href='{% url 'photos_page' album.id %}'">
+                <div class="album_img">
+                    <img style="" src="{{ album.img.url }}">
+                </div>
+                <div class="album-title">{{ album.title }}</div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

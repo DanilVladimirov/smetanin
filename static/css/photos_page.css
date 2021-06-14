@@ -1,0 +1,17 @@
+.photos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 1000px;
+    margin: auto;
+}
+
+.photos img {
+    height: 300px;
+    border-radius: 10px;
+}
+
+.photo_title {
+    font-size: 20px;
+    word-break: break-word;
+}

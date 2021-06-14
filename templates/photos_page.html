@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/static/css/photos_page.css">
+    <link rel="stylesheet" href="/static/css/start_page.css">
+{% endblock %}
+
+{% block body %}
+    <div class="photos">
+        {% for photo in photos %}
+            <div style="margin: 10px;">
+                <div>
+                    <img src="{{ photo.photo.url }}">
+                </div>
+                <div class="photo_title">{{ photo.title }}</div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

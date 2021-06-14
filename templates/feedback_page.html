@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/static/css/feedback_page.css">
+    <link rel="stylesheet" href="/static/css/start_page.css">
+{% endblock %}
+
+{% block body %}
+    <div class="title">Зв'язок</div>
+    <form method="post" class="form">
+        {% csrf_token %}
+        <input type="text" name="pib" placeholder="піб" required>
+        <input type="email" name="mail" placeholder="пошта" required>
+        <input type="text" name="title" placeholder="тема вашого звернення" required>
+        <textarea name="text" placeholder="текст" required></textarea>
+        <button>звернутись</button>
+    </form>
+{% endblock %}

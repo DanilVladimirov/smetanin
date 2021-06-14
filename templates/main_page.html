@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/static/css/start_page.css">
+{% endblock %}
+
+{% block body %}
+    <div style="display: flex;width: 1000px;margin: auto;">
+        <div><img style="width: 400px;border-radius: 10px;" src="/static/smetanin.png"></div>
+        <p class="main_text">Сметанін Олександр Геннадійович</p>
+    </div>
+
+    <div style="font-size: 60px;font-weight: bold;width: 700px;margin: auto;margin-bottom: 10px;">
+        Програміст, фахівець з інформаційних технологій, системний адміністратор
+
+    </div>
+    <div class="facts">
+        <div class="fact">
+            <div class="facts_content">
+                <img src="/static/Party.webp">
+                <div class="fact_text">26.07.1972</div>
+            </div>
+        </div>
+
+        <div class="fact">
+            <div class="facts_content" style="border-color: #5acc36;">
+                <img src="/static/student.webp">
+                <div class="fact_text">випускник чдту</div>
+            </div>
+        </div>
+        <div class="fact">
+            <div class="facts_content" style="border-color: #81befd;">
+                <img src="/static/logo_chpt.png">
+                <div class="fact_text">викладач чпфк</div>
+            </div>
+        </div>
+    </div>
+    <div style="    font-size: 40px;
+    font-weight: bold;
+    width: 1000px;
+    margin: auto;
+    color: #3b4446;
+    margin-top: 15px;
+    text-transform: uppercase;">Досвід роботи</div>
+    <div style="width: 1000px;margin: auto;line-height: 40px;font-size: 19px;text-align: justify;margin-top: 10px;">
+        <b>липень 2001 - січень 2018</b> - інженер-програміст, Національний банк України Управління в Черкаській обл.;<br>
+        <b>лютий 2001 - липень 2001</b> - начальник відділу інформатизації та автоматизації, Черкаське відділення №8224
+        “Ощадбанку”;<br>
+        <b>жовтень 1997 - лютий 2001</b> - спеціаліст по комп’ютерному забезпеченню, Черкаська філія Асоціації “Інтерагро”;<br>
+        <b>березень 1996 - жовтень 1997</b> - головний інженер по автоматизації відділу комп'ютеризації, Черкаське обласне
+        управління Пенсійного фонду України;<br>
+        <b>листопад 1994 - березень 1996</b> - інженер-програміст відділу АСУП, ВАТ “Укрп’єзо” (завод “Імпульс”).<br>
+    </div>
+    <div class="title">Новини
+    </div>
+    <hr style="border: 2px solid;width: 300px;margin: auto;">
+
+    <div class="news">
+        {% for pub in pubs %}
+            <div>
+                <div class="post_title">{{ pub.title }}</div>
+                <div class="post_content">
+                    <div class="post_img"><img style="" src="{{ pub.img.url }}"></div>
+                    <div class="post_text">{{ pub.text }}</div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

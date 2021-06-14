@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/static/css/start_page.css">
+{% endblock %}
+
+{% block body %}
+    <div class="title">Досягнення</div>
+    <div class="news">
+        {% for pub in pubs %}
+            <div>
+                <div class="post_title">{{ pub.title }}</div>
+                <div class="post_content">
+                    <div class="post_img"><img style="" src="{{ pub.img.url }}"></div>
+                    <div class="post_text">{{ pub.text }}</div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
